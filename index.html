@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Frontend Mentor | Tip calculator app</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="main.js"></script>
+</head>
+<body>
+  <main>
+    
+    <div class="app-name">
+      <h1>SPLI<br>TTER</h1>
+    </div>
+    
+    <form class="app-body">
+      <div class="input-section">
+        <div class="bill-input">
+          <label for="bill">Bill</label>
+          <input type="number" class="total-bill" id="bill" placeholder="0" min="0">
+        </div>
+
+        <fieldset class="tip-input">
+          <legend>Select Tip %</legend>
+          <div class="tip-grid">
+            <button type="button" class="tip-btn" value="5" aria-pressed="false">5%</button>
+            <button type="button" class="tip-btn" value="10" aria-pressed="false">10%</button>
+            <button type="button" class="tip-btn" value="15" aria-pressed="false">15%</button>
+            <button type="button" class="tip-btn" value="25" aria-pressed="false">25%</button>
+            <button type="button" class="tip-btn" value="50" aria-pressed="false">50%</button>
+            <input type="number" class="tip-custom" id="custom-tip" placeholder="Custom" min="0" aria-label="Custom tip percentage">
+          </div>
+        </fieldset>
+
+        <div class="people-input">
+          <div class="inf-people">
+            <label for="n-people">Number of People</label>
+            <span class="incorrect" role="alert"></span>
+          </div>
+          <input type="number" class="total-people" id="n-people" placeholder="0" min="0">
+        </div>
+      </div>
+
+      <div class="output-section">
+        <div class="result-row">
+          <div>
+            <p class="result-title">Tip Amount</p>
+            <p class="result-subtitle">/ person</p>
+          </div>
+          <p class="result-amount" id="tip-amount" aria-live="polite">$0.00</p>
+        </div>
+
+        <div class="result-row">
+          <div>
+            <p class="result-title">Total</p>
+            <p class="result-subtitle">/ person</p>
+          </div>
+          <p class="result-amount" id="total-amount" aria-live="polite">$0.00</p>
+        </div>
+
+        <button type="reset" class="reset-btn" id="reset-btn">RESET</button>
+      </div>
+    </form>
+  
+  </main>
+  
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/amateusouto">Alberto Mateu Souto</a>.
+  </footer>
+</body>
+</html>

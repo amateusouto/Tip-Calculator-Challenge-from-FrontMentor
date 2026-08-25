@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
+
+/* ================================
+   1. GLOBAL VARIABLES
+   ================================ */
+:root {
+    --green-400: hsl(172, 67%, 45%);
+    --green-900: hsl(183, 100%, 15%);
+    --grey-500: hsl(186, 14%, 43%);
+    --grey-400: hsl(184, 14%, 56%);
+    --grey-200: hsl(185, 41%, 84%);
+    --grey-50: hsl(189, 47%, 97%);
+    --white: hsl(0, 100%, 100%);
+
+    --font-size-input: 1.5rem;
+    --font-family: 'Space Mono', sans-serif;
+    --border-radius: 0.5rem;
+    --transition-fast: 0.2s ease-in-out;
+}
+
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: var(--font-family);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--grey-200);
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer{
+    padding: 1rem;
+}
+
+footer a{
+    color: var(--green-900);
+    text-decoration: none;
+}
+
+footer a:focus-visible{
+    outline: 0.1rem solid var(--green-900);
+    outline-offset: 0.1rem;
+    border-radius: 0.1rem;
+    text-decoration: none;
+    color: var(--green-900);
+}
+
+/* ================================
+   2. STRUCTURE INPUT-SECTION
+   ================================ */
+.app-name {
+    color: var(--grey-500);
+    display: flex;
+    padding-block: clamp(1rem, 5vw, 4rem);
+    letter-spacing: 0.8rem;
+}
+
+.app-name h1 {
+    font-size: 1.5rem;
+}
+
+.app-body {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1.5rem, 3vw, 2rem);
+    padding: clamp(1.5rem, 5vw, 2rem);
+    width: min(100%, 36rem);
+    background-color: var(--white);
+    border-radius: 1rem 1rem 0 0;
+}
+
+.input-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: 0.5rem;
+}
+
+.bill-input,
+.tip-input,
+.people-input {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    position: relative;
+    border: none;
+}
+
+.bill-input label,
+.tip-input legend,
+.people-input label {
+    color: var(--grey-400);
+}
+
+.tip-input legend {
+    padding-block-end: 0.5rem;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+/* ================================
+   3. INPUTS
+   ================================ */
+.total-bill,
+.total-people,
+.tip-custom {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    background-color: var(--grey-50);
+    border: 2px solid transparent;
+    border-radius: var(--border-radius);
+    text-align: right;
+    font-size: var(--font-size-input);
+    color: var(--green-900);
+    outline: none;
+    transition: border-color var(--transition-fast);
+}
+
+.total-bill {
+    background-image: url("./images/icon-dollar.svg");
+    background-repeat: no-repeat;
+    background-position: 1rem center;
+    background-size: 0.7rem;
+}
+
+.total-people {
+    background-image: url("./images/icon-person.svg");
+    background-repeat: no-repeat;
+    background-position: 1rem center;
+    background-size: 0.8rem;
+}
+
+.inf-people{
+    display: flex;
+    justify-content: space-between;
+}
+
+.total-bill:focus,
+.total-people:focus,
+.tip-custom:focus {
+    border-color: var(--green-400);
+}
+
+.total-bill::placeholder,
+.tip-custom::placeholder,
+.total-people::placeholder {
+    color: var(--grey-400);
+}
+
+/* ================================
+   4. INPUT PEOPLE INCORRECT
+   ================================ */
+.incorrect{
+    display: none;
+}
+
+.incorrect.active{
+    display: flex;
+    color: orangered;
+}
+
+.total-people.active{
+    border: 0.2rem solid orangered;
+}
+
+/* ================================
+   5. BUTTON SELECTION (TIP GRID)
+   ================================ */
+.tip-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 3rem);
+    gap: 1rem;
+}
+
+.tip-btn {
+    width: 100%;
+    color: var(--white);
+    background-color: var(--green-900);
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-input);
+    cursor: pointer;
+    transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.tip-btn:hover,
+.tip-btn:focus-visible,
+.tip-btn.active {
+    background-color: var(--green-400);
+    color: var(--green-900);
+}
+
+/* ================================
+   6. STRUCTURE OUTPUT-SECTION
+   ================================ */
+.output-section {
+    background-color: var(--green-900);
+    border-radius: 1rem;
+    padding: clamp(1rem, 5vw, 2.5rem);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.result-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0rem 0.5rem;
+}
+
+.result-title {
+    color: var(--white);
+}
+
+.result-subtitle {
+    color: var(--grey-400);
+    font-size: 0.8rem;
+}
+
+.result-amount {
+    color: var(--green-400);
+    font-size:  clamp(2rem, 5vw, 3rem);
+}
+
+/* ================================
+   7. RESET BUTTON
+   ================================ */
+.reset-btn {
+    width: 100%;
+    font-size: var(--font-size-input);
+    background-color: var(--green-400);
+    color: var(--green-900);
+    padding: 0.5rem;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.reset-btn:hover,
+.reset-btn:focus-visible {
+    background-color: var(--grey-200);
+    color: var(--green-900);
+}
+
+/* ================================
+   8. MEDIA QUERIES
+   ================================ */
+@media (min-width: 64rem) {
+    /* ================================
+    8.1. STRUCTURE
+    ================================ */
+    body {
+        min-height: 100dvh;
+    }
+    
+    .app-body {
+        flex-direction: row;
+        width: 58rem;
+        border-radius: 1rem;
+    }
+
+    .input-section {
+        flex: 1;
+    }
+
+    .output-section{
+        flex:0.8;
+    }
+
+    /* ================================
+    8.2. GRID STRUCTURE
+    ================================ */
+    .tip-grid {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 3rem);
+    }
+    /* ================================
+    8.3. BUTTON SELECTION
+    ================================ */
+    .reset-btn{
+        margin-top: auto;
+    }
+}

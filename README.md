@@ -30,7 +30,7 @@ Los usuarios deben poder:
 
 ### Captura de pantalla
 
-![](./screenshot.png)
+![Screenshot del proyecto](./images/tip-calculator.webp)
 
 
 ### Enlaces
@@ -62,7 +62,6 @@ En futuros proyectos, quiero seguir profundizando en los estándares de accesibi
 
 ### Recursos útiles
 
-- [The Markdown Guide](https://www.markdownguide.org/) - Me ayudó a estructurar y dar formato a este archivo README correctamente.
 - [MDN Web Docs](https://developer.mozilla.org/) - Referencia esencial para métodos de arrays en JavaScript, eventos del DOM y atributos ARIA.
 
 ### Colaboración con IA
