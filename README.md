@@ -35,7 +35,7 @@ Los usuarios deben poder:
 
 ### Enlaces
 
-- URL del sitio en vivo: [](https://tip-calculator-challenge-from-front.vercel.app/)
+- URL del sitio en vivo: [https://tip-calculator-challenge-from-front.vercel.app/](https://tip-calculator-challenge-from-front.vercel.app/)
 
 ## Mi proceso
 
