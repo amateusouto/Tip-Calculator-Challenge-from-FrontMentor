@@ -6,6 +6,11 @@ const tipAmountOutput = document.querySelectorAll('.result-amount')[0];
 const totalOutput = document.querySelectorAll('.result-amount')[1];
 const resetBtn = document.querySelector('.reset-btn');
 const errorSpan = document.querySelector('.incorrect');
+const form = document.querySelector('.app-body');
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+});
 
 let billValue = 0;
 let tipValue = 0;
@@ -18,7 +23,7 @@ function calculateTip() {
         return;
     }
 
-    let tipTotal = (billValue * tipValue) / 100;
+    const tipTotal = (billValue * tipValue) / 100;
     let tipPerPerson = tipTotal / peopleValue;
     let totalPerPerson = (billValue + tipTotal) / peopleValue;
 
